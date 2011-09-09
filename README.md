@@ -1,4 +1,4 @@
-Paperclip::Defaults [![Build Status](http://travis-ci.org/socialreferral/paperclip-defaults.png)](http://travis-ci.org/socialreferral/paperclip-defaults)
+Paperclip::Defaults [![Build Status](https://secure.travis-ci.org/socialreferral/paperclip-defaults.png)](http://travis-ci.org/socialreferral/paperclip-defaults)
 ==============
 Configurable Rails application wide defaults for Paperclip.
 
