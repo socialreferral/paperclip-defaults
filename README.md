@@ -14,8 +14,14 @@ To use Paperclip::Defaults simply add it to your Gemfile and update config/appli
 config.paperclip_defaults = {default_url: "http://www.example.com/missing.png"}
 ```
 
-In addition to allowing you to seet the defaults for Paperclip has_attached_file now accepts a new option: default_asset_url
-When default_asset_url is passed in has_attached_file will determine the URL of the image through the Rails asset pipeline (making use of an asset host if you have set one for your Rails application).
+In addition to allowing you to set the defaults for Paperclip has_attached_file now accepts a new option: default_asset_url
+When default_asset_url is passed in has_attached_file will determine the URL of the image through the Rails asset pipeline (making use of an asset host if you have set one for your Rails application). You can also make use of a Proc or lambda like so:
+
+``` ruby
+class YourModel < ActiveRecord::Base
+  has_attached_file :logo, default_asset_url: ->(attachment) { "#{attachment.instance.your_special_field}.png" }
+end
+```
 
 Development
 -----------
