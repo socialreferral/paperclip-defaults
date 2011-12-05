@@ -15,7 +15,8 @@ module Paperclip
       paperclip_options = ::Rails.application.config.paperclip_defaults.merge(options)
       if paperclip_options[:default_asset_url]
         begin
-          paperclip_options[:default_url] = ActionController::Base.new.view_context.asset_path(paperclip_options[:default_asset_url])
+          default_asset_url = paperclip_options[:default_asset_url].respond_to?(:call) ? paperclip_options[:default_asset_url].call : paperclip_options[:default_asset_url]
+          paperclip_options[:default_url] = ActionController::Base.new.view_context.asset_path(default_asset_url)
         rescue StandardError => e
           ::Rails.logger.warn("Could not set default asset url for '#{paperclip_options[:default_asset_url]}'")
         end
