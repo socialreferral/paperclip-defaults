@@ -38,7 +38,7 @@ class TestPaperclipDefaults < MiniTest::Unit::TestCase
     ActionController::Base.new.view_context.stubs(:asset_path).returns('http://www.example.com/unknown.png')
 
     model = Class.new(ActiveRecord::Base) do
-      has_attached_file :image1, default_asset_url: ->{ "UNKNOWN.PNG".downcase }
+      has_attached_file :image1, default_asset_url: ->(attachment){ "UNKNOWN.PNG".downcase }
     end
 
     expect = {validations: [], default_url: "http://www.example.com/unknown.png"}
