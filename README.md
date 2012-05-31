@@ -1,3 +1,5 @@
+### NOTE: This functionality was merged into Paperclip itself on the 31 May 2012, therefor this gem is now in maintenance mode (and is no longer being actively developed).
+
 Paperclip::Defaults [![Build Status](https://secure.travis-ci.org/socialreferral/paperclip-defaults.png)](http://travis-ci.org/socialreferral/paperclip-defaults)
 ==============
 Configurable Rails application wide defaults for Paperclip.
